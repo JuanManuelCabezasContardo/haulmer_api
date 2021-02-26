@@ -63,7 +63,7 @@ class AuthController extends Controller
         return response()->json(['message' => 'Cerro sesion exitosamente',],200);
     }
     public function me_update(){
-        
+        dd("update");
     }
     public function me_del(){
 
