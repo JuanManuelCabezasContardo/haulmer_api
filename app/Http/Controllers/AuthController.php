@@ -39,8 +39,11 @@ class AuthController extends Controller
     }//lo que hice en la manana
     public function refresh_token(Request $request){
         $key = "example_key";
-        $jwt= $request->session()->get("token_jwt");
         try{
+            $jwt= $request->session()->get("token_jwt");
+            if(empty($jwt)){
+                return response()->json(['message' => 'Su token a expirado por favor ingresar nuevamente a login',],404);
+            }
             $decoded = JWT::decode($jwt, $key, array('HS256'));
             $time=time();
             $token = array(
@@ -65,7 +68,18 @@ class AuthController extends Controller
     public function me_del(){
 
     }
-    public function new(){//me_add
+    public function new(Request $request){//me_add
+        $response = Http::post('https://60380d194e3a9b0017e92ba9.mockapi.io/haulmer_mock/usuarios',[
+            'nombre' => $request->input('nombre'),
+            'correo_electronico' => $request->input('correo_electronico'),
+            'contrasena' => $request->input('contrasena'),
+        ]);
+        if($response->status() == 200 || $response->status() == 201 ){//no habia otro en mockapi.io
+            return response()->json(['message' => 'el usuario ha sido creado exitosamente',],200);
+        }
+        else{
+            return response()->json(['message' => 'Su tiene algun error en la validacion',],$response->status());
+        }
 
     }
 }

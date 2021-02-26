@@ -20,9 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get("/login/{correo}/{contrasena}",'AuthController@login');
 Route::get("/refresh","AuthController@refresh_token");
-Route::put("/logout",'AuthController@logout');
+Route::get("/logout",'AuthController@logout');
 
-Route::post("/new",'AuthController@logout');
+Route::post("/new",'AuthController@new');
 
 Route::put("/me",'AuthController@me_update');
 Route::delete("/me",'AuthController@me_del');
