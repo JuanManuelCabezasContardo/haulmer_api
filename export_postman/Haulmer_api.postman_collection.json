@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "234e0fe7-42d7-4eaa-bcb5-fb14179d3535",
+		"name": "Haulmer_api",
+		"description": "Entrevista técnica - Backend, prueba tecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Requested-With",
+						"value": "XMLHttpRequest",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "correo_electronico",
+							"value": "first1.last1@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "1111",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/first1.last1@mail.com/1.1.1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						"first1.last1@mail.com",
+						"1.1.1"
+					]
+				},
+				"description": "inicio de sesión"
+			},
+			"response": []
+		},
+		{
+			"name": "post_mockapi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "correo_electronico",
+							"value": "12@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "Nombre51Complet2",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "51.51.51",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://60380d194e3a9b0017e92ba9.mockapi.io/haulmer_mock/usuarios/51",
+					"protocol": "https",
+					"host": [
+						"60380d194e3a9b0017e92ba9",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"haulmer_mock",
+						"usuarios",
+						"51"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter_mockapi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://60380d194e3a9b0017e92ba9.mockapi.io/haulmer_mock/usuarios?nombre=",
+					"protocol": "https",
+					"host": [
+						"60380d194e3a9b0017e92ba9",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"haulmer_mock",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": ""
+						},
+						{
+							"key": "co",
+							"value": "first1.last1@mail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh_JWT",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/refresh/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"refresh",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Route new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Juan Manuel ",
+							"type": "text"
+						},
+						{
+							"key": "correo_electronico",
+							"value": "juanmanuelcontardo@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "estoesunacontrasena",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/new",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"new"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update me unique",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "correo_electronico",
+							"value": "estecorreo@nomessirve.com",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "estoesunnombre",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "estoesunaconrtasena",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete me unique",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "correo_electronico",
+							"value": "estecorreo@nomessirve.com",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "estoesunnombre",
+							"type": "text"
+						},
+						{
+							"key": "contrasena",
+							"value": "estoesunaconrtasena",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/me",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/me",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"me"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	}
+}
