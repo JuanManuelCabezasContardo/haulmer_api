@@ -296,12 +296,12 @@
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8000/api/me",
+			"name": "Logout",
 			"request": {
-				"method": "DELETE",
+				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/me",
+					"raw": "http://127.0.0.1:8000/api/logout/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -312,7 +312,8 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"me"
+						"logout",
+						""
 					]
 				}
 			},
